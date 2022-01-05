@@ -40,19 +40,7 @@
 	padding: 0;
 	margin: 0;
 	float: right;
-	opacity: 0.75;
-	transition: opacity 0.2s;
 	box-shadow: none;
-
-	&:focus,
-	&:hover {
-		opacity: 1;
-	}
-	
-	&:active {
-		outline: none;
-		opacity: 0.9;
-	}
 
 	&::-moz-focus-inner {
 		padding: 0;
@@ -69,7 +57,7 @@
 .pswp__button--arrow--left:before,
 .pswp__button--arrow--right:before {
 	background: url(#{$pswp__assets-path}default-skin.png) 0 0 no-repeat;
-	background-size: 264px 88px;
+	background-size: 176px 176px;
 	width: 44px;
 	height: 44px;
 }
@@ -91,10 +79,20 @@
 
 .pswp__button--close {
 	background-position: 0 -44px;
+
+	&:focus,
+	&:hover {
+		background-position: 0 -132px;
+	}
 }
 
 .pswp__button--share {
 	background-position: -44px -44px;
+
+	&:focus,
+	&:hover {
+		background-position: -44px -132px;
+	}
 }
 
 .pswp__button--fs {
@@ -105,13 +103,31 @@
 	display: block;
 }
 
+.pswp__button--fs {
+	&:focus,
+	&:hover {
+		background-position: 0 -88px;
+	}
+}
+
+
 .pswp--fs .pswp__button--fs {
 	background-position: -44px 0;
+
+	&:focus,
+	&:hover {
+		background-position: -44px -88px;
+	}
 }
 
 .pswp__button--zoom {
 	display: none;
 	background-position: -88px 0;
+
+	&:focus,
+	&:hover {
+		background-position: -88px -88px;
+	}
 }
 
 .pswp--zoom-allowed .pswp__button--zoom {
@@ -120,6 +136,11 @@
 
 .pswp--zoomed-in .pswp__button--zoom {
 	background-position: -132px 0;
+
+	&:focus,
+	&:hover {
+		background-position: -132px -88px;
+	}
 }
 
 /* no arrows on touch screens */
@@ -167,10 +188,19 @@
 	background-position: -138px -44px;
 }
 
+.pswp__button--arrow--left:hover:before, .pswp__button--arrow--left:hover:focus {
+	background-position: -138px -132px;
+}
+
 .pswp__button--arrow--right:before {
 	right: 6px;
 	background-position: -94px -44px;
 }
+
+.pswp__button--arrow--right:hover:before, .pswp__button--arrow--right:hover:focus {
+	background-position: -94px -132px;	
+}
+
 
 
 /*

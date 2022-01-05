@@ -5,6 +5,7 @@
     "node": ">= 0.8.0"
   },
   "scripts": {
+    "build": "grunt production",
     "test": "grunt jshint"
   },
   "devDependencies": {
@@ -19,7 +20,8 @@
     "grunt-contrib-watch": "~1.1.0",
     "grunt-jekyll": "~1.0.0",
     "grunt-sass": "^3.0.2",
-    "grunt-svgmin": "^5.0.0"
+    "grunt-svgmin": "^5.0.0",
+    "node-sass": "^6.0.1"
   },
   "repository": {
     "type": "git",
