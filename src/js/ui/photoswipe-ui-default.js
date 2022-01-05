@@ -439,8 +439,17 @@ var PhotoSwipeUI_Default =
 				_shareButton = el;
 			},
 			onTap: function() {
-				_toggleShareModal();
-			} 
+				var url = _options.getImageURLForShare();
+				
+				var dummyLink = document.createElement('a');
+				dummyLink.setAttribute('href', url);
+				dummyLink.setAttribute('download', "");
+				dummyLink.style.display = 'none';
+
+				document.body.appendChild(dummyLink);
+				dummyLink.click();
+				document.body.removeChild(dummyLink);
+			}
 		},
 		{ 
 			name: 'button--zoom', 

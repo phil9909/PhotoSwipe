@@ -1,6 +1,6 @@
-/*! PhotoSwipe Default UI - 4.1.3 - 2021-11-24
+/*! PhotoSwipe Default UI - 4.1.3 - 2022-01-05
 * http://photoswipe.com
-* Copyright (c) 2021 Dmitry Semenov; */
+* Copyright (c) 2022 Dmitry Semenov; */
 /**
 *
 * UI on top of main sliding area (caption, arrows, close button, etc.).
@@ -442,8 +442,17 @@ var PhotoSwipeUI_Default =
 				_shareButton = el;
 			},
 			onTap: function() {
-				_toggleShareModal();
-			} 
+				var url = _options.getImageURLForShare();
+				
+				var dummyLink = document.createElement('a');
+				dummyLink.setAttribute('href', url);
+				dummyLink.setAttribute('download', "");
+				dummyLink.style.display = 'none';
+
+				document.body.appendChild(dummyLink);
+				dummyLink.click();
+				document.body.removeChild(dummyLink);
+			}
 		},
 		{ 
 			name: 'button--zoom', 
